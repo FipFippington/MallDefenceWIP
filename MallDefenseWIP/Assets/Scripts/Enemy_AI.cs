@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_AI : MonoBehaviour
 {
     public float speed;
+    public bool running;
     private Rigidbody2D enemyRb;
     public GameObject Tower;
 
@@ -17,6 +18,14 @@ public class Enemy_AI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyRb.AddForce((Tower.transform.position - transform.position).normalized * speed);
+        if (running)
+        {
+            enemyRb.AddForce((Tower.transform.position - transform.position).normalized * speed);
+        }
+        else
+        {
+            enemyRb.velocity = new Vector3(Mathf.Lerp(enemyRb.velocity.x, 0, 0.5f), Mathf.Lerp(enemyRb.velocity.y, 0, 0.5f));
+            Debug.Log("Trying to stop now");
+        }
     }
 }
