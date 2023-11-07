@@ -16,8 +16,9 @@ public class TowerField : MonoBehaviour
         
     }
 
-    void OnTriggerEnter (Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.GetComponent<Enemy_AI>().running = false;
             Debug.Log("There's an object I'm slowing down");

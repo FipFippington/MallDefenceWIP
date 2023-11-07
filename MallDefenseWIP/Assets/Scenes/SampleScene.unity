@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   running: 1
+  deceleration: 0.005
   Tower: {fileID: 1071976960}
 --- !u!212 &312901493
 SpriteRenderer:

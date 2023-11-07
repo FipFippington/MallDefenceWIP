@@ -6,6 +6,7 @@ public class Enemy_AI : MonoBehaviour
 {
     public float speed;
     public bool running;
+    public float deceleration;
     private Rigidbody2D enemyRb;
     public GameObject Tower;
 
@@ -24,7 +25,7 @@ public class Enemy_AI : MonoBehaviour
         }
         else
         {
-            enemyRb.velocity = new Vector3(Mathf.Lerp(enemyRb.velocity.x, 0, 0.5f), Mathf.Lerp(enemyRb.velocity.y, 0, 0.5f));
+            enemyRb.velocity = new Vector3(Mathf.Lerp(enemyRb.velocity.x, 0, deceleration), Mathf.Lerp(enemyRb.velocity.y, 0, deceleration));
             Debug.Log("Trying to stop now");
         }
     }
