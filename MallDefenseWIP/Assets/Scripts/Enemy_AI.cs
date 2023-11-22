@@ -26,7 +26,6 @@ public class Enemy_AI : MonoBehaviour
         else
         {
             enemyRb.velocity = new Vector3(Mathf.Lerp(enemyRb.velocity.x, 0, deceleration), Mathf.Lerp(enemyRb.velocity.y, 0, deceleration));
-            Debug.Log("Trying to stop now");
         }
     }
 }
