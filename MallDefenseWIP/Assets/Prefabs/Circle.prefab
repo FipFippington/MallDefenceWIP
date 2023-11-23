@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7efcb37a7815590458ce9a9f08ed677f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1
   running: 1
   deceleration: 0.005
   Tower: {fileID: 2669271957256620655, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
