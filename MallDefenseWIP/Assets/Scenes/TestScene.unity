@@ -786,6 +786,78 @@ MonoBehaviour:
   spawnIndex: 4
   timeToSpawn: 3
   timeToNextSpawn: 0
+--- !u!114 &1484833019 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8903884053451110018, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
+  m_PrefabInstance: {fileID: 2669271957082757231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d54937af12cc74d977da4160413fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &1519308421
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2002946781288734921, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+      propertyPath: TowerHealth
+      value: 
+      objectReference: {fileID: 1484833019}
+    - target: {fileID: 2002946781288734926, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002946781288734926, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002946781288734926, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.080976225
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002946781288734926, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002946781288734926, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002946781288734926, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002946781288734926, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002946781288734926, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002946781288734926, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002946781288734926, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002946781288734926, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002946781288734927, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+      propertyPath: m_Name
+      value: Circle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
 --- !u!1 &1604407632
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,6 +1069,22 @@ PrefabInstance:
     - target: {fileID: 2669271957256620655, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
       propertyPath: m_Name
       value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903884053451110018, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
+      propertyPath: Hp
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903884053451110018, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
+      propertyPath: hp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903884053451110018, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
+      propertyPath: maxHp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903884053451110018, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
+      propertyPath: currentHp
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
