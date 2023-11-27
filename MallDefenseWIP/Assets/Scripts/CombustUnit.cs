@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirstUnitScript : MonoBehaviour
+public class CombustUnit : MonoBehaviour
 {
     public float range;
     public GameObject currentTarget;
@@ -18,6 +18,7 @@ public class FirstUnitScript : MonoBehaviour
     {
         GetComponent<CircleCollider2D>().radius = range;
         fireRateInit = fireRate;
+        currentTarget = GameObject.Find("Tower");
     }
 
     // Update is called once per frame
@@ -26,25 +27,13 @@ public class FirstUnitScript : MonoBehaviour
         fireRate -= Time.deltaTime;
         if (currentTarget == null)
         {
-            aimLocked = false;
+            currentTarget = GameObject.Find("Tower");
         }
         else
         {
-            float zRotation = Mathf.Atan((currentTarget.transform.position.y - transform.position.y)/((currentTarget.transform.position.x - transform.position.x)))*180/Mathf.PI;
-            zCheck = zRotation;
-            aimLocked = true;
-            if ((currentTarget.transform.position.x - transform.position.x) > 0)
-            {
-                transform.rotation = Quaternion.Euler(0, 0, zRotation);
-            }
-            else
-            {
-                transform.rotation = Quaternion.Euler(0, 0, zRotation + 180);
-            }
-
             if (fireRate <= 0 && currentTarget != null)
             {
-                currentTarget.GetComponent<Enemy_AI>().Damaged(damage);
+                StartCoroutine(SingleFrameActivation());
                 particles.Play();
                 fireRate = fireRateInit;
             }
@@ -53,17 +42,17 @@ public class FirstUnitScript : MonoBehaviour
 
     void OnTriggerStay2D (Collider2D other)
     {
-        if (!aimLocked && other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             currentTarget = other.gameObject;
+            other.gameObject.GetComponent<Enemy_AI>().Damaged(damage);
         }
     }
 
-    void OnTriggerExit2D (Collider2D other)
+    IEnumerator SingleFrameActivation()
     {
-        if (other.gameObject == currentTarget)
-        {
-            currentTarget = null;
-        }
+        GetComponent<CircleCollider2D>().enabled = true;
+        yield return new WaitForEndOfFrame();
+        GetComponent<CircleCollider2D>().enabled = false;
     }
 }

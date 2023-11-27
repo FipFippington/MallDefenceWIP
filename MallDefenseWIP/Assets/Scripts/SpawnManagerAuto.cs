@@ -9,7 +9,7 @@ public class SpawnManagerAuto : MonoBehaviour
     //randomly picks place to spawn
     public int spawnIndex;
     //Time to spawn
-    public float timeToSpawn = 3;
+    public float timeToSpawn = 6;
     public float timeToNextSpawn;
 
     private void Start()

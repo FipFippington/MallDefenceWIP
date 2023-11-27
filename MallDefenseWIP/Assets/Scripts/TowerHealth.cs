@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerHealth : MonoBehaviour
 {
-    public int maxHp = 20;
-    public int currentHp = 20;
+    public float maxHp = 20;
+    public float currentHp;
     public bool gameOver = false;
+    public Slider lol;
+    public Image fill;
     // Start is called before the first frame update
+
     void Start()
     {
+        lol.maxValue = maxHp;
+        lol.value = 0;
+        lol.fillRect.gameObject.SetActive(false);
         currentHp = maxHp;
     }
 
@@ -18,14 +25,19 @@ public class TowerHealth : MonoBehaviour
     {
         if (currentHp <= 0)
         {
-            Debug.Log("GAME OVER");
-            gameOver = true;
+            GameObject.Find("Management").GetComponent<GameManager>().Over();
         }
+        UpdateValue(currentHp);
     }
 
-    public void Damage()
+    public void Damage(float damageTaken)
     {
-        currentHp--;
-        Debug.Log("hit" + (currentHp));
+        currentHp = currentHp - damageTaken;
+    }
+
+    public void UpdateValue(float currentHealth)
+    {
+        lol.fillRect.gameObject.SetActive(true);
+        lol.value = Mathf.Lerp(lol.value, currentHealth, 0.01f);
     }
 }

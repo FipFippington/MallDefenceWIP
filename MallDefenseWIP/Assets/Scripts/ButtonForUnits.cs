@@ -19,7 +19,11 @@ public class ButtonForUnits : MonoBehaviour
         GameObject manager = GameObject.Find("Management");
         manager.GetComponent<GameManager>().spawnPrefab = unitPrefab;
         manager.GetComponent<GameManager>().readyToPlace = true;
-        press.interactable = false;
+        GameObject[] buttons = GameObject.FindGameObjectsWithTag("Button");
+        foreach (GameObject button in buttons)
+        {
+            button.GetComponent<ButtonForUnits>().press.interactable = false;
+        }
     }
 
     // Update is called once per frame

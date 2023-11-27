@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Button
   - Ground
+  - Unit
+  - Unit Range
   layers:
   - Default
   - TransparentFX
