@@ -51,7 +51,7 @@ public class Enemy_AI : MonoBehaviour
     {
         Debug.Log("I'm being hit");
         currentHealth -= damageTaken;
-        enemyRb.velocity = new Vector2(enemyRb.velocity.x * -0.25f, enemyRb.velocity.y * -0.25f);
+        enemyRb.velocity = new Vector2((tower.transform.position - transform.position).normalized.x * enemyRb.velocity.x * -0.25f, (tower.transform.position - transform.position).normalized.y * enemyRb.velocity.y * -0.25f);
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
