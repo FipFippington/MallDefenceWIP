@@ -44,7 +44,7 @@ public class FirstUnitScript : MonoBehaviour
 
             if (fireRate <= 0 && currentTarget != null)
             {
-                currentTarget.GetComponent<Enemy_AI>().Damaged(damage);
+                currentTarget.GetComponent<Enemy_AI>().Damaged(damage, 5.0f);
                 particles.Play();
                 fireRate = fireRateInit;
             }

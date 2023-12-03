@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Unit
   - Unit Range
+  - Tower
   layers:
   - Default
   - TransparentFX

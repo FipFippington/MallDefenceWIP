@@ -47,14 +47,19 @@ public class Enemy_AI : MonoBehaviour
         }
     }
 
-    public void Damaged(float damageTaken)
+    public void Damaged(float damageTaken, float pushPower)
     {
         Debug.Log("I'm being hit");
         currentHealth -= damageTaken;
-        enemyRb.velocity = new Vector2((tower.transform.position - transform.position).normalized.x * enemyRb.velocity.x * -0.25f, (tower.transform.position - transform.position).normalized.y * enemyRb.velocity.y * -0.25f);
+        Vector2 currentVelocity = enemyRb.velocity;
+        enemyRb.velocity = enemyRb.velocity + new Vector2((tower.transform.position - transform.position).normalized.x * enemyRb.velocity.magnitude * -0.25f * pushPower, (tower.transform.position - transform.position).normalized.y * enemyRb.velocity.magnitude * -0.25f * pushPower);
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+        }
+        if (currentVelocity.magnitude < enemyRb.velocity.magnitude)
+        {
+            Debug.Log("I got pushed back!");
         }
     }
 }

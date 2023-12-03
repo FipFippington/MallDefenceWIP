@@ -38,6 +38,6 @@ public class TowerHealth : MonoBehaviour
     public void UpdateValue(float currentHealth)
     {
         lol.fillRect.gameObject.SetActive(true);
-        lol.value = Mathf.Lerp(lol.value, currentHealth, 0.01f);
+        lol.value = Mathf.Lerp(lol.value, currentHealth, 0.025f);
     }
 }

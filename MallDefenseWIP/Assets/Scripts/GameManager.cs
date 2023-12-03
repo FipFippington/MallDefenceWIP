@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject spawnPrefab;
     public GameObject gameOverText;
     public GameObject unitDisplay;
+    public GameObject unitButtonSet;
+    public GameObject unitSummoner;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +23,16 @@ public class GameManager : MonoBehaviour
         if (readyToPlace)
         {
             unitDisplay.SetActive(false);
+            unitButtonSet.SetActive(false);
+            unitSummoner.SetActive(true);
+            unitSummoner.GetComponent<Button>().interactable = false;
             if (Input.GetMouseButtonDown(0))
             {
                 Vector2 ray = Camera.main.ScreenToWorldPoint (Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(ray, -Vector3.forward);
                 if (hit)
                 {
-                    if (!hit.collider.gameObject.CompareTag("Ground") && !hit.collider.gameObject.CompareTag("Unit Range"))
+                    if (!hit.collider.gameObject.CompareTag("Ground") && !hit.collider.gameObject.CompareTag("Unit Range") || hit.collider.gameObject.CompareTag("Tower"))
                     {
                         Debug.Log("That's not ground!");
                     }

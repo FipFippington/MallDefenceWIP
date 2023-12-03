@@ -33,7 +33,6 @@ public class CombustUnit : MonoBehaviour
         {
             if (fireRate <= 0 && currentTarget != null)
             {
-                StartCoroutine(SingleFrameActivation());
                 particles.Play();
                 fireRate = fireRateInit;
             }
@@ -45,7 +44,7 @@ public class CombustUnit : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             currentTarget = other.gameObject;
-            other.gameObject.GetComponent<Enemy_AI>().Damaged(damage);
+            other.gameObject.GetComponent<Enemy_AI>().Damaged(damage * Time.deltaTime, 0f);
         }
     }
 
