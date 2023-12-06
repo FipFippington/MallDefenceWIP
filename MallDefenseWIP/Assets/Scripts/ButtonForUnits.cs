@@ -22,7 +22,7 @@ public class ButtonForUnits : MonoBehaviour
         GameObject[] buttons = GameObject.FindGameObjectsWithTag("Button");
         foreach (GameObject button in buttons)
         {
-            button.GetComponent<ButtonForUnits>().press.interactable = false;
+            button.GetComponent<Button>().interactable = false;
         }
     }
 

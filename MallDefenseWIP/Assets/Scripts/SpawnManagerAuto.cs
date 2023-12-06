@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnManagerAuto : MonoBehaviour
 {    //Randomly picks enemy to spawn
     public GameObject[] enemyPrefabs;
+    public Transform[] spawnPoints;
     public int enemyIndex;
     //randomly picks place to spawn
     public int spawnIndex;
@@ -25,32 +26,19 @@ public class SpawnManagerAuto : MonoBehaviour
         if (timeToNextSpawn  <= Time.time)
         {
             //picking location
-            int spawnIndex = Random.Range(1, 5);
+            int spawnIndex = Random.Range(0, spawnPoints.Length);
             {
-                //spawning
-                if (spawnIndex == 1)
+                for (int i = 0; i < spawnPoints.Length; i++)
                 {
-                    Vector2 spawnPos = new Vector2(14, 7);
-                    int enemyIndex = Random.Range(0, enemyPrefabs.Length);
-                    Instantiate(enemyPrefabs[enemyIndex], spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
-                }
-                if (spawnIndex == 2)
-                {
-                    Vector2 spawnPos = new Vector2(14, -7);
-                    int enemyIndex = Random.Range(0, enemyPrefabs.Length);
-                    Instantiate(enemyPrefabs[enemyIndex], spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
-                }
-                if (spawnIndex == 3)
-                {
-                    Vector2 spawnPos = new Vector2(-14, 7);
-                    int enemyIndex = Random.Range(0, enemyPrefabs.Length);
-                    Instantiate(enemyPrefabs[enemyIndex], spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
-                }
-                if (spawnIndex == 4)
-                {
-                    Vector2 spawnPos = new Vector2(-14, -7);
-                    int enemyIndex = Random.Range(0, enemyPrefabs.Length);
-                    Instantiate(enemyPrefabs[enemyIndex], spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
+                    if (i != spawnIndex)
+                    {
+                        Debug.Log("not this point.");
+                    }
+                    else
+                    {
+                        int enemyIndex = Random.Range(0, enemyPrefabs.Length);
+                        Instantiate(enemyPrefabs[enemyIndex], spawnPoints[spawnIndex].position, enemyPrefabs[enemyIndex].transform.rotation);
+                    }
                 }
             }
             timeToNextSpawn = Time.time + timeToSpawn;

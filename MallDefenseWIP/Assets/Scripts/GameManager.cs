@@ -32,12 +32,16 @@ public class GameManager : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(ray, -Vector3.forward);
                 if (hit)
                 {
-                    if (!hit.collider.gameObject.CompareTag("Ground") && !hit.collider.gameObject.CompareTag("Unit Range") || hit.collider.gameObject.CompareTag("Tower"))
+                    if (!hit.collider.gameObject.CompareTag("Unit Range") && !hit.collider.gameObject.CompareTag("Ground"))
                     {
                         Debug.Log("That's not ground!");
+                        Debug.Log(hit.point);
+                        Debug.Log(hit.collider.gameObject);
                     }
-                    else if (hit.collider.gameObject.CompareTag("Ground") || hit.collider.gameObject.CompareTag("Unit Range"))
+                    else
                     {
+                        Debug.Log(hit.point);
+                        Debug.Log(hit.collider.gameObject);
                         Instantiate(spawnPrefab, hit.point, Quaternion.identity);
                         GameObject[] buttons = GameObject.FindGameObjectsWithTag("Button");
                         foreach (GameObject button in buttons)
