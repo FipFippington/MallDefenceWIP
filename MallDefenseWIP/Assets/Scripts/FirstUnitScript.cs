@@ -12,6 +12,7 @@ public class FirstUnitScript : MonoBehaviour
     public float fireRate;
     public float fireRateInit;
     public float damage;
+    public float pushback;
     public ParticleSystem particles;
     // Start is called before the first frame update
     void Start()
@@ -44,7 +45,7 @@ public class FirstUnitScript : MonoBehaviour
 
             if (fireRate <= 0 && currentTarget != null)
             {
-                currentTarget.GetComponent<Enemy_AI>().Damaged(damage, 5.0f);
+                currentTarget.GetComponent<Enemy_AI>().Damaged(damage, pushback);
                 particles.Play();
                 fireRate = fireRateInit;
             }

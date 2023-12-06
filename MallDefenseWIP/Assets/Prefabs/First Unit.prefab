@@ -101,12 +101,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee76a3805d22b754d8039ccc4c75115d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 1.75
+  range: 2
   currentTarget: {fileID: 0}
   zCheck: 0
-  fireRate: 1
+  fireRate: 1.5
   fireRateInit: 0
   damage: 1
+  pushback: 4
   particles: {fileID: 133547549275655752}
 --- !u!58 &1019466194857615596
 CircleCollider2D:
@@ -294,7 +295,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -9,33 +9,38 @@ public class CombustUnit : MonoBehaviour
     bool aimLocked = false;
     public float zCheck;
 
-    public float fireRate;
-    float fireRateInit;
+    public float maxTime;
+    float maxTimeInit;
+    public float cooldown;
     public float damage;
     public ParticleSystem particles;
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<CircleCollider2D>().radius = range;
-        fireRateInit = fireRate;
+        maxTimeInit = maxTime;
         currentTarget = GameObject.Find("Tower");
     }
 
     // Update is called once per frame
     void Update()
     {
-        fireRate -= Time.deltaTime;
-        if (currentTarget == null)
+        maxTime -= Time.deltaTime;
+        if (maxTime >= 0)
         {
-            currentTarget = GameObject.Find("Tower");
+            particles.Play();
         }
-        else
+
+        if (maxTime < 0 && maxTime > -cooldown)
         {
-            if (fireRate <= 0 && currentTarget != null)
-            {
-                particles.Play();
-                fireRate = fireRateInit;
-            }
+            particles.Stop();
+            GetComponent<CircleCollider2D>().enabled = false;
+        }
+
+        if (maxTime <= -cooldown)
+        {
+            maxTime = maxTimeInit;
+            GetComponent<CircleCollider2D>().enabled = true;
         }
     }
 
@@ -46,12 +51,5 @@ public class CombustUnit : MonoBehaviour
             currentTarget = other.gameObject;
             other.gameObject.GetComponent<Enemy_AI>().Damaged(damage * Time.deltaTime, 0f);
         }
-    }
-
-    IEnumerator SingleFrameActivation()
-    {
-        GetComponent<CircleCollider2D>().enabled = true;
-        yield return new WaitForEndOfFrame();
-        GetComponent<CircleCollider2D>().enabled = false;
     }
 }

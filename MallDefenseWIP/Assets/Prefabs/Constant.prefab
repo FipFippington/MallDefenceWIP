@@ -4932,7 +4932,8 @@ MonoBehaviour:
   range: 1.5
   currentTarget: {fileID: 0}
   zCheck: 0
-  fireRate: 0
+  maxTime: 3
+  cooldown: 2
   damage: 1.5
   particles: {fileID: 785494260367568065}
 --- !u!114 &-4704009894017540682

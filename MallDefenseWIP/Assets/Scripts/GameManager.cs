@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
                         {
                             FirstUnitScript unitScript = hit.collider.gameObject.transform.parent.GetComponent<FirstUnitScript>();
                             unitName.text = hit.collider.gameObject.name;
-                            unitStats.text = "Damage: " + unitScript.damage + "\nFire Rate: " + (1/unitScript.fireRateInit) + "/s" + "\nTargeting: Single";
+                            unitStats.text = "Damage: " + unitScript.damage + "\nFire Rate: " + (Mathf.Round((1/unitScript.fireRateInit)*100)/100) + "/s" + "\nTargeting: Single";
                         }
                     }
                 }
