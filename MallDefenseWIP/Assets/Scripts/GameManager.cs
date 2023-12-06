@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,12 +10,14 @@ public class GameManager : MonoBehaviour
     public GameObject spawnPrefab;
     public GameObject gameOverText;
     public GameObject unitDisplay;
+    public TMP_Text unitStats;
+    public TMP_Text unitName;
     public GameObject unitButtonSet;
     public GameObject unitSummoner;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -32,17 +35,11 @@ public class GameManager : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(ray, -Vector3.forward);
                 if (hit)
                 {
-                    if (!hit.collider.gameObject.CompareTag("Unit Range") && !hit.collider.gameObject.CompareTag("Ground"))
-                    {
-                        Debug.Log("That's not ground!");
-                        Debug.Log(hit.point);
-                        Debug.Log(hit.collider.gameObject);
-                    }
-                    else
+                    if (hit.collider.gameObject.CompareTag("Ground") || hit.collider.gameObject.CompareTag("Unit Range"))
                     {
                         Debug.Log(hit.point);
                         Debug.Log(hit.collider.gameObject);
-                        Instantiate(spawnPrefab, hit.point, Quaternion.identity);
+                        Instantiate(spawnPrefab, new Vector3 (hit.point.x, hit.point.y, 0), Quaternion.identity);
                         GameObject[] buttons = GameObject.FindGameObjectsWithTag("Button");
                         foreach (GameObject button in buttons)
                         {
@@ -50,6 +47,13 @@ public class GameManager : MonoBehaviour
                         }
                         readyToPlace = false;
                     }
+                    else
+                    {
+                        Debug.Log("That's not ground!");
+                        Debug.Log(hit.point);
+                        Debug.Log(hit.collider.gameObject);
+                    }
+                    Debug.DrawLine(transform.position, ray, Color.white, Time.deltaTime);
                 }
             }
         }
@@ -68,6 +72,18 @@ public class GameManager : MonoBehaviour
                     else
                     {
                         unitDisplay.SetActive(true);
+                        if (hit.collider.gameObject.transform.parent.GetComponent<CombustUnit>() != null)
+                        {
+                            CombustUnit combustible = hit.collider.gameObject.transform.parent.GetComponent<CombustUnit>();
+                            unitStats.text = "Damage: " + combustible.damage + "/s" + "\nFire Rate: N/A" + "\nTargeting: None";
+                            unitName.text = hit.collider.gameObject.name;
+                        }
+                        else
+                        {
+                            FirstUnitScript unitScript = hit.collider.gameObject.transform.parent.GetComponent<FirstUnitScript>();
+                            unitName.text = hit.collider.gameObject.name;
+                            unitStats.text = "Damage: " + unitScript.damage + "\nFire Rate: " + (1/unitScript.fireRateInit) + "/s" + "\nTargeting: Single";
+                        }
                     }
                 }
             }

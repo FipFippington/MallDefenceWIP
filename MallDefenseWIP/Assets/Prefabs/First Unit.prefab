@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 695287627940079361}
   - component: {fileID: 695287627940079364}
   - component: {fileID: 1019466194857615596}
+  - component: {fileID: -2324075245281020819}
   m_Layer: 0
   m_Name: First Unit
   m_TagString: Unit Range
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,6 +105,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   zCheck: 0
   fireRate: 1
+  fireRateInit: 0
   damage: 1
   particles: {fileID: 133547549275655752}
 --- !u!58 &1019466194857615596
@@ -122,6 +124,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.75
+--- !u!114 &-2324075245281020819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695287627940079365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53f8da67a69a794da381d5469759106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &695287628098234265
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +233,7 @@ GameObject:
   - component: {fileID: 3320145529389309594}
   - component: {fileID: 7802897384599649031}
   m_Layer: 0
-  m_Name: Hexagon Flat-Top
+  m_Name: First Unit
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5157,7 +5171,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

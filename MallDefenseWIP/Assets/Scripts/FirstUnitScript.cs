@@ -10,7 +10,7 @@ public class FirstUnitScript : MonoBehaviour
     public float zCheck;
 
     public float fireRate;
-    float fireRateInit;
+    public float fireRateInit;
     public float damage;
     public ParticleSystem particles;
     // Start is called before the first frame update
