@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public TMP_Text unitName;
     public GameObject unitButtonSet;
     public GameObject unitSummoner;
+    public TMP_Text manaText;
+    public int manaCount = 2;
+    public int manaToTake;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +48,7 @@ public class GameManager : MonoBehaviour
                         {
                             button.GetComponent<Button>().interactable = true;
                         }
+                        manaCount -= manaToTake;
                         readyToPlace = false;
                     }
                     else
@@ -88,6 +92,8 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+        manaText.text = manaCount.ToString();
     }
 
     public void Over()

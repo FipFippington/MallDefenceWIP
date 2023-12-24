@@ -7,6 +7,7 @@ public class ButtonForUnits : MonoBehaviour
 {
     public Button press;
     public GameObject unitPrefab;
+    public int manaRequirement;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class ButtonForUnits : MonoBehaviour
         GameObject manager = GameObject.Find("Management");
         manager.GetComponent<GameManager>().spawnPrefab = unitPrefab;
         manager.GetComponent<GameManager>().readyToPlace = true;
+        manager.GetComponent<GameManager>().manaToTake = manaRequirement;
         GameObject[] buttons = GameObject.FindGameObjectsWithTag("Button");
         foreach (GameObject button in buttons)
         {
@@ -29,6 +31,13 @@ public class ButtonForUnits : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameObject.Find("Management").GetComponent<GameManager>().manaCount < manaRequirement)
+        {
+            GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            GetComponent<Button>().interactable = true;
+        }
     }
 }

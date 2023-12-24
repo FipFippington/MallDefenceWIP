@@ -17,6 +17,7 @@ public class Enemy_AI : MonoBehaviour
     public float damageDealt;
     public float maxHealth;
     float currentHealth;
+    public int manaGranted;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,7 @@ public class Enemy_AI : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            GameObject.Find("Management").GetComponent<GameManager>().manaCount += manaGranted;
         }
         if (currentVelocity.magnitude < enemyRb.velocity.magnitude)
         {

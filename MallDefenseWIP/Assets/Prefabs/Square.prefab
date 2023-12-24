@@ -108,6 +108,7 @@ MonoBehaviour:
   damageTime: 0
   damageDealt: 1.5
   maxHealth: 5
+  manaGranted: 3
 --- !u!50 &7897391910449975476
 Rigidbody2D:
   serializedVersion: 4
