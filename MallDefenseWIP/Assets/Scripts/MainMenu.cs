@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public void PlayEndless()
     {
-        SceneManager.LoadSceneAsync("TestScene");
+        SceneManager.LoadSceneAsync("EndlessScene");
+    }
+
+    public void PlaySandbox()
+    {
+        SceneManager.LoadSceneAsync("SandboxScene");
     }
 }
