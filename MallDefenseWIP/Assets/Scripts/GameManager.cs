@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool readyToPlace = false;
     public GameObject spawnPrefab;
     public GameObject gameOverText;
+    public GameObject gameOverButton;
     public GameObject unitDisplay;
     public TMP_Text unitStats;
     public TMP_Text unitName;
@@ -99,5 +100,6 @@ public class GameManager : MonoBehaviour
     public void Over()
     {
         gameOverText.SetActive(true);
+        gameOverButton.SetActive(true);
     }
 }

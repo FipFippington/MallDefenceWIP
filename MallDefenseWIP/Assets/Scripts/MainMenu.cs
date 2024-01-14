@@ -14,4 +14,14 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("SandboxScene");
     }
+
+    public void PlayMenu()
+    {
+        SceneManager.LoadSceneAsync("MainMenu");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
