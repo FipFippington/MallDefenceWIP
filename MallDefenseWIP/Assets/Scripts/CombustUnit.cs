@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CombustUnit : MonoBehaviour
 {
+    public float maxLifetime = 15f;
+
     public float range;
     public GameObject currentTarget;
     bool aimLocked = false;
@@ -25,6 +27,12 @@ public class CombustUnit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        maxLifetime -= Time.deltaTime;
+        if (maxLifetime < 0 )
+        {
+            Destroy(gameObject);
+        }
+
         maxTime -= Time.deltaTime;
         if (maxTime >= 0)
         {

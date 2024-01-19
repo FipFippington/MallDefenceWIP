@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FirstUnitScript : MonoBehaviour
 {
+    public float maxLifetime = 10f;
+
     public float range;
     public GameObject currentTarget;
     bool aimLocked = false;
@@ -24,6 +26,12 @@ public class FirstUnitScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        maxLifetime -= Time.deltaTime;
+        if (maxLifetime < 0 )
+        {
+            Destroy(gameObject);
+        }
+
         fireRate -= Time.deltaTime;
         if (currentTarget == null)
         {
@@ -31,7 +39,7 @@ public class FirstUnitScript : MonoBehaviour
         }
         else
         {
-            float zRotation = Mathf.Atan((currentTarget.transform.position.y - transform.position.y)/((currentTarget.transform.position.x - transform.position.x)))*180/Mathf.PI;
+            float zRotation = Mathf.Atan((currentTarget.transform.position.y - transform.position.y)/((currentTarget.transform.position.x - transform.position.x)))*180/Mathf.PI + 90f;
             zCheck = zRotation;
             aimLocked = true;
             if ((currentTarget.transform.position.x - transform.position.x) > 0)
