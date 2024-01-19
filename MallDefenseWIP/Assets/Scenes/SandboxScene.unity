@@ -3600,6 +3600,7 @@ MonoBehaviour:
   readyToPlace: 0
   spawnPrefab: {fileID: 0}
   gameOverText: {fileID: 1664931894}
+  gameOverButton: {fileID: 0}
   unitDisplay: {fileID: 1854964941}
   unitStats: {fileID: 551754774}
   unitName: {fileID: 1629614133}
@@ -4518,6 +4519,18 @@ PrefabInstance:
     - target: {fileID: 1474344219, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669271957256620650, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669271957256620650, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
+      propertyPath: m_Size.y
+      value: 4.4871244
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669271957256620650, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.25774544
       objectReference: {fileID: 0}
     - target: {fileID: 2669271957256620652, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
       propertyPath: m_BodyType
