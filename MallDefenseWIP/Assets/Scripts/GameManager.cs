@@ -15,13 +15,17 @@ public class GameManager : MonoBehaviour
     public TMP_Text unitName;
     public GameObject unitButtonSet;
     public GameObject unitSummoner;
+    public GameObject unitTimerIndicator;
+    public GameObject unitToTrackTime;
+    Vector3 hitPoint;
+    public TMP_Text unitTimer;
     public TMP_Text manaText;
     public int manaCount = 2;
     public int manaToTake;
     // Start is called before the first frame update
     void Start()
     {
-
+        hitPoint = Vector3.zero;
     }
 
     // Update is called once per frame
@@ -29,6 +33,7 @@ public class GameManager : MonoBehaviour
     {
         if (readyToPlace)
         {
+            unitToTrackTime = null;
             unitDisplay.SetActive(false);
             unitButtonSet.SetActive(false);
             unitSummoner.SetActive(true);
@@ -73,6 +78,7 @@ public class GameManager : MonoBehaviour
                     if (!hit.collider.gameObject.CompareTag("Unit"))
                     {
                         unitDisplay.SetActive(false);
+                        unitToTrackTime = null;
                     }
                     else
                     {
@@ -89,12 +95,25 @@ public class GameManager : MonoBehaviour
                             unitName.text = hit.collider.gameObject.name;
                             unitStats.text = "Damage: " + unitScript.damage + "\nFire Rate: " + (Mathf.Round((1/unitScript.fireRateInit)*100)/100) + "/s" + "\nTargeting: Single";
                         }
+                        unitToTrackTime = hit.collider.gameObject.transform.parent.gameObject;
+                        hitPoint = hit.point;
                     }
                 }
             }
         }
-
         manaText.text = manaCount.ToString();
+
+        if (unitToTrackTime != null)
+        {
+            
+            unitTimerIndicator.SetActive(true);
+            unitTimerIndicator.GetComponent<RectTransform>().position = hitPoint;
+            unitTimer.text = Mathf.Ceil(unitToTrackTime.GetComponent<TowerLifetime>().maxLifetime) + "s";
+        }
+        else
+        {
+            unitTimerIndicator.SetActive(false);
+        }
     }
 
     public void Over()

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class FirstUnitScript : MonoBehaviour
 {
-    public float maxLifetime = 10f;
-
     public float range;
     public GameObject currentTarget;
     bool aimLocked = false;
@@ -21,17 +19,12 @@ public class FirstUnitScript : MonoBehaviour
     {
         GetComponent<CircleCollider2D>().radius = range;
         fireRateInit = fireRate;
+        StartCoroutine(QuickSpin());
     }
 
     // Update is called once per frame
     void Update()
     {
-        maxLifetime -= Time.deltaTime;
-        if (maxLifetime < 0 )
-        {
-            Destroy(gameObject);
-        }
-
         fireRate -= Time.deltaTime;
         if (currentTarget == null)
         {
@@ -74,5 +67,13 @@ public class FirstUnitScript : MonoBehaviour
         {
             currentTarget = null;
         }
+    }
+
+    IEnumerator QuickSpin()
+    {
+        yield return new WaitForEndOfFrame();
+        transform.rotation = Quaternion.Euler(Vector3.right * 180);
+        yield return new WaitForEndOfFrame();
+        transform.rotation = Quaternion.Euler(Vector3.zero);
     }
 }

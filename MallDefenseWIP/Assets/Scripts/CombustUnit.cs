@@ -22,17 +22,12 @@ public class CombustUnit : MonoBehaviour
         GetComponent<CircleCollider2D>().radius = range;
         maxTimeInit = maxTime;
         currentTarget = GameObject.Find("Tower");
+        StartCoroutine(QuickSpin());
     }
 
     // Update is called once per frame
     void Update()
     {
-        maxLifetime -= Time.deltaTime;
-        if (maxLifetime < 0 )
-        {
-            Destroy(gameObject);
-        }
-
         maxTime -= Time.deltaTime;
         if (maxTime >= 0)
         {
@@ -59,5 +54,13 @@ public class CombustUnit : MonoBehaviour
             currentTarget = other.gameObject;
             other.gameObject.GetComponent<Enemy_AI>().Damaged(damage * Time.deltaTime, 0f);
         }
+    }
+
+    IEnumerator QuickSpin()
+    {
+        yield return new WaitForEndOfFrame();
+        transform.rotation = Quaternion.Euler(Vector3.right * 180);
+        yield return new WaitForEndOfFrame();
+        transform.rotation = Quaternion.Euler(Vector3.zero);
     }
 }

@@ -4825,6 +4825,7 @@ GameObject:
   - component: {fileID: 785494261528701658}
   - component: {fileID: 785494261528701659}
   - component: {fileID: -4704009894017540682}
+  - component: {fileID: 4874535119598273520}
   m_Layer: 0
   m_Name: Constant
   m_TagString: Unit Range
@@ -4929,12 +4930,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5036992254a82204c855762aa7ceeada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLifetime: 15
   range: 2.5
   currentTarget: {fileID: 0}
   zCheck: 0
   maxTime: 3
   cooldown: 2
-  damage: 1.5
+  damage: 2
   particles: {fileID: 785494260367568065}
 --- !u!114 &-4704009894017540682
 MonoBehaviour:
@@ -4948,6 +4950,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53f8da67a69a794da381d5469759106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4874535119598273520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785494261528701656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce74c417ed9d4046808707c03b8abcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLifetime: 15
+  maxLifetimeInit: 0
 --- !u!1 &6788086371387760054
 GameObject:
   m_ObjectHideFlags: 0

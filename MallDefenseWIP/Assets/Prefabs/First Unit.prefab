@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 695287627940079364}
   - component: {fileID: 1019466194857615596}
   - component: {fileID: -2324075245281020819}
+  - component: {fileID: -3928870691244108139}
   m_Layer: 0
   m_Name: First Unit
   m_TagString: Unit Range
@@ -101,7 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee76a3805d22b754d8039ccc4c75115d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifetime: 10
   range: 2
   currentTarget: {fileID: 0}
   zCheck: 0
@@ -138,6 +138,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53f8da67a69a794da381d5469759106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3928870691244108139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695287627940079365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce74c417ed9d4046808707c03b8abcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLifetime: 10
+  maxLifetimeInit: 0
 --- !u!1 &2596247446917294100
 GameObject:
   m_ObjectHideFlags: 0
