@@ -20,7 +20,7 @@ public class TowerField : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<Enemy_AI>().running = false;
+            other.gameObject.GetComponent<NewEnemyAI>().running = false;
             Debug.Log("There's an object I'm slowing down");
         }
     }

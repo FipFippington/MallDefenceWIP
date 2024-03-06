@@ -32,6 +32,10 @@ public class Enemy_AI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!running)
+        {
+            Debug.Log("I should be slowing down.");
+        }
         damageTime -= Time.deltaTime;
         if (running)
         {

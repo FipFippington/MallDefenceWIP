@@ -4218,13 +4218,14 @@ GameObject:
   - component: {fileID: 1413689366}
   - component: {fileID: 1413689365}
   - component: {fileID: 1413689367}
+  - component: {fileID: 1413689368}
   m_Layer: 0
   m_Name: Spawn Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1413689365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4264,7 +4265,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413689364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a679b5923d12a947ad77d33f317cdfa, type: 3}
   m_Name: 
@@ -4279,6 +4280,29 @@ MonoBehaviour:
   spawnIndex: 4
   timeToSpawn: 5
   timeToNextSpawn: 0
+--- !u!114 &1413689368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413689364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdf15a4c89293cd449251df0e7a30a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wavesToSpawn:
+  - enemiesToSpawn:
+    - {fileID: 2002946781288734927, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+    - {fileID: 8407004066451321462, guid: 56da6a7aad0a883468bd8f58d4fa34f2, type: 3}
+    - {fileID: 2002946781288734927, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+  - enemiesToSpawn:
+    - {fileID: 2002946781288734927, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+    - {fileID: 8407004066451321462, guid: 56da6a7aad0a883468bd8f58d4fa34f2, type: 3}
+    - {fileID: 2002946781288734927, guid: ed9eaaa8ff879db40a6cb00b5934d5e5, type: 3}
+    - {fileID: 8407004066451321462, guid: 56da6a7aad0a883468bd8f58d4fa34f2, type: 3}
+    - {fileID: 8407004066451321462, guid: 56da6a7aad0a883468bd8f58d4fa34f2, type: 3}
 --- !u!1 &1502545265
 GameObject:
   m_ObjectHideFlags: 0

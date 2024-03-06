@@ -52,7 +52,8 @@ public class CombustUnit : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             currentTarget = other.gameObject;
-            other.gameObject.GetComponent<Enemy_AI>().Damaged(damage * Time.deltaTime, 0f);
+            other.gameObject.GetComponent<EnemyDamageable>().Damaged(damage * Time.deltaTime, 0f);
+            Debug.Log(damage * Time.deltaTime);
         }
     }
 
