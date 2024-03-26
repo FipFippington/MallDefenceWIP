@@ -7555,6 +7555,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 750736539}
     m_Modifications:
+    - target: {fileID: 2051850860531249600, guid: cb72adcd4f0f03940bbfcc32f3614469, type: 3}
+      propertyPath: Displacement.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051850860531249601, guid: cb72adcd4f0f03940bbfcc32f3614469, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d1cdd94b02aa4d40a090b1359ad4901, type: 3}
     - target: {fileID: 2051850860531249602, guid: cb72adcd4f0f03940bbfcc32f3614469, type: 3}
       propertyPath: m_Name
       value: CursorVisual
@@ -7589,11 +7597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2051850860531249603, guid: cb72adcd4f0f03940bbfcc32f3614469, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 76.518
       objectReference: {fileID: 0}
     - target: {fileID: 2051850860531249603, guid: cb72adcd4f0f03940bbfcc32f3614469, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 76.518
       objectReference: {fileID: 0}
     - target: {fileID: 2051850860531249603, guid: cb72adcd4f0f03940bbfcc32f3614469, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7625,11 +7633,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2051850860531249603, guid: cb72adcd4f0f03940bbfcc32f3614469, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.96347
       objectReference: {fileID: 0}
     - target: {fileID: 2051850860531249603, guid: cb72adcd4f0f03940bbfcc32f3614469, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 81.237
       objectReference: {fileID: 0}
     - target: {fileID: 2051850860531249603, guid: cb72adcd4f0f03940bbfcc32f3614469, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
