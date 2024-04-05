@@ -192,8 +192,8 @@ MonoBehaviour:
   damageTime: 0
   invincibleTime: 2
   damageDealt: 1
-  tower: {fileID: 0}
-  towerHealth: {fileID: 0}
+  tower: {fileID: 2669271957256620655, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
+  towerHealth: {fileID: 8903884053451110018, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
 --- !u!114 &1231189583021117537
 MonoBehaviour:
   m_ObjectHideFlags: 0

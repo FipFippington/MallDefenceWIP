@@ -21,7 +21,7 @@ public class NewEnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tower = GameObject.Find("Tower");
+        tower = GameObject.Find("Elevator");
         towerHealth = tower.GetComponent<TowerHealth>();
         damageTime = invincibleTime;
         enemyRb = GetComponent<Rigidbody2D>();

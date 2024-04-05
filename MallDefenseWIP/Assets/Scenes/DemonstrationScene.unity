@@ -11335,7 +11335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2669271957256620655, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
       propertyPath: m_Name
-      value: Tower
+      value: Elevator
       objectReference: {fileID: 0}
     - target: {fileID: 8903884053451110018, guid: 8722b407df631f74fb567fe6456a7253, type: 3}
       propertyPath: lol
