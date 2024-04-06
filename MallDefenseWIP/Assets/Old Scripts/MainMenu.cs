@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    
     public void PlayEndless()
     {
         SceneManager.LoadSceneAsync("EndlessScene");
@@ -18,6 +19,7 @@ public class MainMenu : MonoBehaviour
     public void PlayMenu()
     {
         SceneManager.LoadSceneAsync("MainMenu");
+        Time.timeScale = 1f;
     }
 
     public void PlayTutorial()
